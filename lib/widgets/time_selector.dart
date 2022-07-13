@@ -183,7 +183,10 @@ class _TimeSelectorState extends State<TimeSelector> {
                     style: TextStyle(color: Colors.white)),
               ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );
@@ -220,7 +223,6 @@ class _TimeSelectorState extends State<TimeSelector> {
     bool result = false;
     int startTime = (startTm.hour * 60 + startTm.minute) * 60;
     int endTime = (endTm.hour * 60 + endTm.minute) * 60;
-    int dif = startTime - endTime;
 
     if (endTime > startTime) {
       result = true;

@@ -87,8 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   scheduledDatas.sort((a, b) =>
                                       a.startTime.compareTo(b.startTime));
                                   showModalBottomSheet<void>(
-                                    backgroundColor: const Color.fromARGB(
-                                        255, 171, 171, 244),
+                                    backgroundColor: Colors.grey[300],
                                     context: context,
                                     isScrollControlled: true,
                                     shape: const RoundedRectangleBorder(
@@ -136,9 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             isScrollControlled: true,
             builder: (BuildContext context) {
-              return SizedBox(
-                  height: MediaQuery.of(context).size.height * .6,
-                  child: TimeSelector(
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TimeSelector(
                     onComplete: (s) async {
                       var res = await bloc.sendData(s);
                       if (res) {
@@ -173,7 +173,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             });
                       }
                     },
-                  ));
+                  ),
+                ],
+              );
             },
           );
         },
