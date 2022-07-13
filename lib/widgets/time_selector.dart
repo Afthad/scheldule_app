@@ -27,11 +27,9 @@ class _TimeSelectorState extends State<TimeSelector> {
   TimeOfDay? _endTime;
   DateTime? _date;
   String? _name;
-
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final formkey = GlobalKey<FormState>();
-
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
