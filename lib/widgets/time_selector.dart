@@ -82,6 +82,9 @@ class _TimeSelectorState extends State<TimeSelector> {
               onChanged: (s) {
                 _name = s;
               },
+              onSaved: (s) {
+                _name = s;
+              },
             ),
           ),
           const SizedBox(
@@ -165,6 +168,7 @@ class _TimeSelectorState extends State<TimeSelector> {
                 onPressed: () {
                   if (formkey.currentState!.validate()) {
                     {
+                      formkey.currentState!.save();
                       widget.onComplete(SchedulerDTO(
                           name: _name!,
                           startTime: DateTime(_date!.year, _date!.month,

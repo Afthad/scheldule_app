@@ -84,6 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                               .difference(element.date)
                                               .inDays ==
                                           0));
+                                  scheduledDatas.sort((a, b) =>
+                                      a.startTime.compareTo(b.startTime));
                                   showModalBottomSheet<void>(
                                     backgroundColor: const Color.fromARGB(
                                         255, 171, 171, 244),
