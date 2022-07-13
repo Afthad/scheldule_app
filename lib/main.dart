@@ -161,8 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: MaterialButton(
                                       color: Colors.blue,
                                       onPressed: () {
-                                        Navigator.of(c, rootNavigator: true)
-                                            .pop('dialog');
+                                        Navigator.pop(c);
                                       },
                                       child: const Text('Okay'),
                                     ),
@@ -176,9 +175,9 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           );
         },
-        tooltip: 'Increment',
+        tooltip: 'Add',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
